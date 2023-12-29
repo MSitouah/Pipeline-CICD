@@ -8,6 +8,7 @@ FROM python:3.9
 # ARG BLD_SERVICE_NAME
 # ARG API_USERNAME
 # ARG API_PASSWORD
+ENV PIP_ROOT_USER_ACTION=ignore
 
 # Set the working directory in the container
 WORKDIR /app
@@ -33,6 +34,7 @@ ENV PATH=$ORACLE_HOME:$PATH
 
 # Install any needed dependencies specified in requirements.txt
 COPY requirements.txt /app/
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Flask application code into the container
