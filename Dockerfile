@@ -12,10 +12,10 @@ ENV PIP_ROOT_USER_ACTION=ignore
 
 # Set the working directory in the container
 WORKDIR /app
-RUN apt-get install apt-utils
 
 # Install Oracle Instant Client and basic dependencies
 RUN apt-get update && apt-get install -y \
+    apt-get install apt-utils \
     libaio1 \
     unzip \
     && rm -rf /var/lib/apt/lists/*
