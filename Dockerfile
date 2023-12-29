@@ -15,7 +15,6 @@ WORKDIR /app
 
 # Install Oracle Instant Client and basic dependencies
 RUN apt-get update && apt-get install -y \
-    apt-get install apt-utils \
     libaio1 \
     unzip \
     && rm -rf /var/lib/apt/lists/*
